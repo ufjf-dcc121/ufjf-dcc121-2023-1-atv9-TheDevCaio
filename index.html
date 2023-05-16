@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Semana 9: Forms</title>
+
 </head>
+
 <body>
+
     <header>
+
     <h1>Semana 9: Forms</h1>
+
     </header>
+
     <main>
+
         <form action="">
             <input type="text" name="nome"/>
             <input type="text" name="sobrenome"/>
@@ -19,36 +27,19 @@
             <input type="reset"/>
             
         </form>
+
     </main>
+
+<script>
+
+const form = document.querySelector("form");
+form.addEventListener("submit", aoEnviar);
+
+function aoEnviar(evento){
+    evento.preventDefault();
+    console.log("Hello, form!");
+}
+    </script>
 
 </body>
 </html>
-
-
-const divs = document.querySelectorAll("#calculadora > div");
-        const eN1 = divs[0];
-        const eN2 = divs[1];
-        const eResultado = divs[2];
-        const eOperadores = document.querySelectorAll("#calculadora > button");
-        const eCalcularSoma = eOperadores[0];
-        const eCalcularSub = eOperadores[1];
-        const eCalcularDiv = eOperadores[2];
-        const eCalcularMult = eOperadores[3];
-
-
-        
-
-
-        eCalcularSoma.addEventListener('click', calcularSoma);
-        eCalcularSub.addEventListener('click', calcularSub);
-        eCalcularDiv.addEventListener('click', calcularDiv);
-        eCalcularMult.addEventListener('click', calcularMult);
-
-
-        function calcularSub(){
-        const n1 = Number(eN1.textContent);
-        const n2 = Number(eN2.textContent);
-        const sub = n1 - n2;
-        eResultado.textContent = sub;
-        eResultado.style.color = 'red';
-        }
