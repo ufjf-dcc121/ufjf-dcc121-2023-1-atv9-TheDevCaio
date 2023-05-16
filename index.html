@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Semana 9: Forms</title>
+    <style>
+        #pessoa{
+            color: darkgreen;
+        }
+    </style>
 
 </head>
 
@@ -23,21 +28,31 @@
             <input type="text" name="nome"/>
             <input type="text" name="sobrenome"/>
             <input type="text" name="idade"/>
+            <input type="date" name="nascimento"/>
             <input type="submit"/>
             <input type="reset"/>
             
         </form>
-
+      <p id = "pessoa"> </p>
     </main>
 
 <script>
 
 const form = document.querySelector("form");
 form.addEventListener("submit", aoEnviar);
+const pessoa = document.getElementById("pessoa")
 
-function aoEnviar(evento){
-    evento.preventDefault();
+function aoEnviar(event){
+    event.preventDefault();
     console.log("Hello, form!");
+    const nome = form.nome.value;
+    const sobrenome = form.sobrenome.value;
+    const idade = Number(form.idade.value);
+    const nomeCompleto = `${nome} ${sobrenome}, ${idade} anos`;
+    console.log(nomeCompleto);
+    pessoa.innerHTML =  `Olá <span>${nomeCompleto}</span>!`;
+    form.reset();
+    form.nome.focus();
 }
     </script>
 
