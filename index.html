@@ -10,6 +10,22 @@
         #pessoa{
             color: darkgreen;
         }
+        .pessoa>div{
+            display:inline;
+            color: darkgreen;
+        }
+        div.sobrenome {
+            color: darkblue;
+        }
+        div.idade {
+            color: darkred;
+        }
+        .sobrenome::before{
+            content: ' ';
+        }
+        .idade::before {
+            content: ', ';
+        }
     </style>
 
 </head>
